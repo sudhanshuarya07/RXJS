@@ -1,0 +1,39 @@
+<div class="search col-md-4">
+  <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"placeholder="serach text">
+</div>
+ <select id="sort-by" (change)="sort($event)">
+  <option value="" selected disabled hidden>Sort By</option> 
+  <option value="Low">Age Low To High</option>
+  <option value="High">Age High to Low Price</option>
+</select>   
+
+  <table class="table table-bordered col-md-3 col-sm-3">
+      <thead>
+        <tr>
+          <th scope="col">FirstName</th>
+          
+          <th scope="col">LastName</th>
+          <th scope="col">EmployeeID</th>
+          <th scope="col">Age</th>
+          <th scope="col">PhoneNO</th>
+          <th>
+            
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr *ngFor="let p of data | filter:searchText">
+          <td>{{ p.Name}}</td>
+    <td>{{ p.LastName}}</td>
+    <td>{{ p.EmployeeID}}</td>
+    <td>{{p.Age}}</td>
+    <td>{{p.PhoneNO}}</td>
+  </tr>
+  </tbody>
+  </table>
+  
+        
+      
+  
+  
